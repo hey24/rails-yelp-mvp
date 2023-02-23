@@ -12,6 +12,10 @@
   </head>
 
   <body>
+    <nav class="navbar sticky-top m-2" data-bs-theme="dark">
+      <%= link_to 'All Restaurants', restaurants_path, class: "btn btn-outline-primary nav-item ml-1" %>
+      <%= link_to 'Add new restaurant', new_restaurant_path, class: "btn btn-outline-primary nav-item mr-1" %>
+    </nav>
     <%= yield %>
   </body>
 </html>

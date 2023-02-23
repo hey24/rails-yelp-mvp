@@ -1,0 +1,21 @@
+<div class="container p-3 border rounded shadow-sm">
+  <h1><%= @restaurant.name %></h1>
+  <p><strong>Address:</strong> <%= @restaurant.address %></p>
+  <p><strong>Phone Number:</strong> <%= @restaurant.phone_number %></p>
+  <p><strong>Category:</strong> <%= @restaurant.category.capitalize %></p>
+
+  <p><strong>Reviews</strong></p>
+  <ul class="list-group">
+    <% @restaurant.reviews.each do |review| %>
+      <div class="d-flex justify-content-between list-group-item list-unstyled">
+        <li><strong>Review:</strong> <%= review.content %></li>
+        <li><strong>Rating:</strong> <%= review.rating %></li>
+      </div>
+    <% end %>
+  </ul>
+</div>
+<br>
+<div class="container p-3 border rounded shadow-sm">
+  <h2>Create Review</h2>
+  <%= render 'reviews/form_review', restaurant: @restaurant, review: @review%>
+</div>
